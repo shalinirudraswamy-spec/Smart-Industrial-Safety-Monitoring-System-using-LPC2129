@@ -1,4 +1,4 @@
-Smart Industrial Safety Monitoring System using LPC2129
+9Smart Industrial Safety Monitoring System using LPC2129
 
 📌 Project Overview
 
@@ -41,7 +41,7 @@ The Smart Industrial Safety Monitoring System using LPC2129 is an embedded syste
 4. Sensor values and system status are displayed on the LCD.
 5. The same information is transmitted through UART.
 6. If all conditions are normal, the system displays SAFE.
-7. If an unsafe condition is detected, LED/Buzzer alerts are activated.
+7. If an unsafe condition is detected, LED alerts are activated.
 
 📊 Example Output
 
