@@ -1,101 +1,65 @@
-9Smart Industrial Safety Monitoring System using LPC2129
+# Smart Industrial Safety Monitoring System using LPC2129
 
-📌 Project Overview
+## Project Overview
 
-The Smart Industrial Safety Monitoring System using LPC2129 is an embedded system designed to monitor industrial safety conditions in real time. The LPC2129 ARM7 microcontroller collects data from different sensors, processes the readings and displays the information on an LCD and UART terminal. LEDs and a buzzer provide alerts when unsafe conditions are detected.
+The Smart Industrial Safety Monitoring System is an ARM7-based embedded system developed using the LPC2129 microcontroller. The system is designed to monitor industrial safety conditions such as temperature, worker movement, and fire detection.
 
-🎯 Objectives
+The system uses an LM35 temperature sensor, PIR motion sensor, and flame sensor. The LPC2129 processes the sensor inputs and displays the system status on a 16x2 LCD. The sensor information is also transmitted to a PC/Laptop through UART. LED indicators provide visual status indication.
 
-- Monitor industrial conditions continuously.
-- Detect abnormal or unsafe conditions.
-- Display sensor readings on LCD.
-- Transmit data through UART.
-- Provide LED and buzzer alerts.
-- Implement the system on real hardware.
+## Hardware Components
 
-🛠️ Hardware Components
+- LPC2129 ARM7 Microcontroller
+- LM35 Temperature Sensor
+- PIR Motion Sensor
+- Flame Sensor
+- 16x2 LCD Display
+- 3 LEDs
+- UART
+- 5V Power Supply
+- PC/Laptop
 
-- LPC2129 ARM7 Development Board
-- Temperature Sensor
-- LDR / Light Sensor
-- Moisture Sensor
-- Water Sensor
-- 16x2 LCD
-- LEDs
-- UART Interface
-- Power Supply
+## Pin Connections
 
-💻 Software Requirements
+| Component | LPC2129 Pin |
+|---|---|
+| LM35 Temperature Sensor | P0.28 |
+| PIR Motion Sensor | P0.30 |
+| Flame Sensor | P0.5 |
+| LED1 | P0.17 |
+| LED2 | P0.18 |
+| LED3 | P0.19 |
 
-- Embedded C
-- Keil µVision
-- LPC2129 "LPC21xx.h" header file
-- UART Terminal
-- Flash Magic
+## Required Functions
 
-⚙️ Working Principle
+1. GPIO Initialization
+2. UART Display
+3. ADC Initialization
+4. Read ADC
+5. Temperature Conversion
+6. PIR Sensor Read
+7. Flame Sensor Read
+8. LCD Display
+9. LED Indication
 
-1. LPC2129 initializes all sensors and output devices.
-2. Sensor values are continuously read.
-3. The controller processes and compares the readings with predefined safety conditions.
-4. Sensor values and system status are displayed on the LCD.
-5. The same information is transmitted through UART.
-6. If all conditions are normal, the system displays SAFE.
-7. If an unsafe condition is detected, LED alerts are activated.
+## Working Principle
 
-📊 Example Output
+The LM35 temperature sensor provides an analog output to the LPC2129 ADC.
 
-Temperature : 30.5 C
-Light Level : NORMAL
-Moisture    : 72 %
-Water       : NOT DETECTED
+The PIR sensor provides a digital input to detect worker movement, while the flame sensor provides a digital input for fire detection.
 
-System Status : SAFE
-LED Status    : GREEN
+The LPC2129 processes all sensor inputs and provides the following outputs:
 
-Alert Condition
+- Temperature and system status on the 16x2 LCD
+- Sensor information through UART terminal
+- System condition through LED indicators
 
-Temperature : 45.2 C
-Water       : DETECTED
+## Normal Condition – SAFE
 
-System Status : ALERT
-LED Status    : RED
-Buzzer       : ON
+Example:
 
-🔌 Main Connections
-
-Module| Interface
-Temperature Sensor| ADC
-LDR| ADC
-Moisture Sensor| ADC
-Water Sensor| GPIO
-LCD| GPIO
-LED| GPIO
-Buzzer| GPIO
-UART| UART0
-
-🧪 Test Cases
-
-Condition| Expected Result
-Normal temperature| SAFE
-High temperature| HOT / ALERT
-Normal light| NORMAL
-Low light| DARK
-Normal moisture| SAFE
-Low moisture| DRY / ALERT
-Water absent| NOT DETECTED
-Water detected| ALERT
-
-
-🚀 Future Enhancements
-
-- IoT/cloud-based monitoring
-- GSM/Wi-Fi notifications
-- Mobile application
-- Data logging
-- Additional industrial safety sensors
-
-✅ Conclusion
-
-This project demonstrates a real-time industrial safety monitoring system using the LPC2129 ARM7 microcontroller. It combines sensor interfacing, ADC, GPIO, LCD and UART communication with an alert mechanism to identify unsafe conditions.
-
+```text
+Temperature : 30°C
+PIR Sensor  : Worker Not Detected
+Flame Sensor: No Fire
+Machine Status: SAFE
+LED Status  : GREEN LED ON
