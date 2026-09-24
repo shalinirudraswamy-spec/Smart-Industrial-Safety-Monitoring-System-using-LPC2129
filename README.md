@@ -99,10 +99,3 @@ Water detected| ALERT
 
 This project demonstrates a real-time industrial safety monitoring system using the LPC2129 ARM7 microcontroller. It combines sensor interfacing, ADC, GPIO, LCD and UART communication with an alert mechanism to identify unsafe conditions.
 
-Project Details
-
-Project Type: Mini Project
-Microcontroller: LPC2129 ARM7
-Programming: Embedded C
-IDE: Keil µVision
-Implementation: Real Hardware
