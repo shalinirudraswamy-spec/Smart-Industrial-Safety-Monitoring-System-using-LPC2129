@@ -22,7 +22,6 @@ The Smart Industrial Safety Monitoring System using LPC2129 is an embedded syste
 - Water Sensor
 - 16x2 LCD
 - LEDs
-- Buzzer
 - UART Interface
 - Power Supply
 
